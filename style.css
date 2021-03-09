@@ -29,7 +29,7 @@
 
 
 
-html {
+html.light {
     background-image: linear-gradient(145deg, #221122 55%, #e66858 45%);
     color: rgb(128, 119, 119);
     min-height: 100%;
@@ -48,7 +48,8 @@ html.dark {
 background-image: linear-gradient(145deg, #130e13 55%, #1f100e 45%);
 color: white;
 font-family:'Rubik', sans-serif;
-font-size:1.5rem
+font-size:1.5rem;
+min-height: 100%;
 
 }
 
@@ -91,14 +92,13 @@ padding: 1rem;
  DARK MODE 
  ----------*/
 
- .header-bar.dark {
+ aside.header-bar-dark {
 
     position: absolute;
     top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: white;
     background: rgb(86, 86, 88);
     width: 100%;
     height: 100px;
@@ -125,11 +125,11 @@ padding: 1rem;
     height: 34px;
   }
   
-  /* .switch input { 
+  .switch input { 
     opacity: 0;
     width: 0;
     height: 0;
-  } */
+  }
   
   .slider {
     position: absolute;
@@ -160,7 +160,7 @@ padding: 1rem;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #5a0a0a;
+    box-shadow: 0 0 2px #f8d1d1;
   }
   
   input:checked + .slider:before {
@@ -186,6 +186,7 @@ padding: 1rem;
     background: rgba(255, 255, 255, 0.514);
     margin: 2rem;
     margin-bottom: 4rem;
+    border-radius: 5px;
     z-index: 2;
 
     }
@@ -239,10 +240,18 @@ margin: 1rem;
  DARK MODE 
  ----------*/
 
- .ans-btn.dark {
+ button.ans-btn-dark {
 
     background: black;
     color: white;
+    display: flex;
+    width: 280px;
+    height: 80px;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 10px 25px 2px rgba(0, 0, 0, 0.281);
      
  }
 
