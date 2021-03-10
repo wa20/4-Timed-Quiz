@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-  }
-  
-  ol,
-  ul {
-    list-style: none;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  color: rgb(104, 100, 100);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
 /*========== 
  - Table of Contents -
 
@@ -28,83 +28,68 @@
  
 ===========*/
 
-
-
 html.light {
-    background-image: linear-gradient(145deg, #221122 55%, #e66858 45%);
-    color: rgb(128, 119, 119);
-    min-height: 100%;
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.5rem;
-   
-
+  background-image: linear-gradient(145deg, #221122 55%, #e66858 45%);
+  color: rgb(128, 119, 119);
+  min-height: 100%;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.5rem;
 }
-
 
 /*============
  DARK MODE 
 =============*/
 
 html.dark {
-background-image: linear-gradient(145deg, #130e13 55%, #1f100e 45%);
-color: white;
-font-family:'Rubik', sans-serif;
-font-size:1.5rem;
-min-height: 100%;
-
+  background-image: linear-gradient(145deg, #130e13 55%, #1f100e 45%);
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.5rem;
+  min-height: 100%;
 }
 
 /* =========
 ===========*/
 
-
-
 body {
-
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    min-height: 100%;
-
-
-
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100%;
 }
-
 
 /*===========
 1 -  
 ============*/
 .header-bar {
-
-position: absolute;
-top: 0;
-display: flex;
-align-items: center;
-justify-content: space-between;
-background: white;
-width: 100%;
-height: 100px;
-padding: 1rem;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  width: 100%;
+  height: 100px;
+  padding: 1rem;
 }
 
 /*----------
  DARK MODE 
  ----------*/
 
- aside.header-bar-dark {
-
-    position: absolute;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgb(86, 86, 88);
-    width: 100%;
-    height: 100px;
-    padding: 1rem;
-    }
+aside.header-bar-dark {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(86, 86, 88);
+  width: 100%;
+  height: 100px;
+  padding: 1rem;
+}
 
 /* =========
 ===========*/
@@ -120,253 +105,241 @@ padding: 1rem;
 ============*/
 
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  .switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #c51212;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 2px #f8d1d1;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #c51212;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 2px #f8d1d1;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
 
 /*===========
 2 -
 ============*/
 
 .container {
-    display: flex;
-    position: absolute;
-    top: 6rem;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-    min-width: 80%;
-    background: rgba(255, 255, 255, 0.514);
-    margin: 2rem;
-    margin-bottom: 4rem;
-    border-radius: 5px;
-    z-index: 2;
-
-    }
-
+  display: flex;
+  position: absolute;
+  top: 6rem;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  min-width: 80%;
+  background: rgba(255, 255, 255, 0.514);
+  margin: 2rem;
+  margin-bottom: 4rem;
+  border-radius: 5px;
+  z-index: 2;
+}
 
 /*===========
 3 -
 ============*/
 
 .screen {
-position: relative;
-display: flex;
+  position: relative;
+  display: flex;
 
-width: 85%;
-height: 30vh;
-background-color: rgba(255, 255, 255, 0.171);
-box-shadow: 0 10px 25px 1px rgba(0, 0, 0, 0.281);
-border-radius: 5px;
-padding: 30px;
-margin: 1rem;
-
+  width: 85%;
+  height: 30vh;
+  background-color: rgba(255, 255, 255, 0.171);
+  box-shadow: 0 10px 25px 1px rgba(0, 0, 0, 0.281);
+  border-radius: 5px;
+  padding: 30px;
+  margin: 1rem;
 }
 
 /*----------
  DARK MODE 
  ----------*/
- .screen-black {
-    position: relative;
-    display: flex;
-    width: 85%;
-    height: 30vh;
-    background-color: rgba(0, 0, 0, 0.699);
-    box-shadow: 0 10px 25px 1px rgba(0, 0, 0, 0.281);
-    border-radius: 5px;
-    padding: 30px;
-    margin: 1rem;
- }
+.screen-black {
+  position: relative;
+  display: flex;
+  width: 85%;
+  height: 30vh;
+  background-color: rgba(0, 0, 0, 0.699);
+  box-shadow: 0 10px 25px 1px rgba(0, 0, 0, 0.281);
+  border-radius: 5px;
+  padding: 30px;
+  margin: 1rem;
+}
 
 /*===========
 4 -
 ============*/
 
 .ans-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 100%;
 }
 
 .ans-btn {
-    display: flex;
-    width: 280px;
-    height: 80px;
-    padding: 10px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 10px 25px 2px rgba(0, 0, 0, 0.281);
-    cursor: pointer;
-    
+  display: flex;
+  width: 280px;
+  height: 80px;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 10px 25px 2px rgba(0, 0, 0, 0.281);
+  cursor: pointer;
 }
 
+.ans-btn:hover {
+    border: 2px solid white;
+}
 /*----------
  DARK MODE 
  ----------*/
 
- button.ans-btn-dark {
+button.ans-btn-dark {
+  background: black;
+  color: white;
+  display: flex;
+  width: 280px;
+  height: 80px;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 10px 25px 2px rgba(0, 0, 0, 0.281);
+  cursor: pointer;
+}
 
-    background: black;
-    color: white;
-    display: flex;
-    width: 280px;
-    height: 80px;
-    padding: 10px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 10px 25px 2px rgba(0, 0, 0, 0.281);
-    cursor: pointer;
-     
- }
+.ans-btn-dark:hover {
+    border: 2px solid white;
+}
 
- /*----------
+/*----------
  correct and wrong modes
  ----------*/
 .correct {
-    display: flex;
-    width: 280px;
-    height: 80px;
-    padding: 10px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 10px 25px 2px rgba(26, 155, 9, 0.281);
-    cursor: pointer;
+  display: flex;
+  width: 280px;
+  height: 80px;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 10px 25px 2px rgba(26, 155, 9, 0.281);
+  cursor: pointer;
 }
 
 .wrong {
-
-    display: flex;
-    width: 280px;
-    height: 80px;
-    padding: 10px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 10px 25px 2px rgba(155, 31, 9, 0.281);
-    cursor: pointer;
+  display: flex;
+  width: 280px;
+  height: 80px;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 10px 25px 2px rgba(155, 31, 9, 0.281);
+  cursor: pointer;
 }
-
-
 
 /*===========
 5 - answer section
 ============*/
 .bottom {
-  
-  
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: space-around;
-  
 }
 
-.ans-box{
-    
-   
-  
-    display: flex;
-    border-radius: 5px;
-    box-shadow: 0 10px 25px 2px rgba(0, 0, 0, 0.281);  
-    background: rgba(255, 255, 255, 0.13);
-    margin: 25px;
-    height: 45px;
-    width: 150px;
-  
+.ans-box {
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 0 10px 25px 2px rgba(0, 0, 0, 0.281);
+  background: rgba(255, 255, 255, 0.13);
+  margin: 25px;
+  height: 45px;
+  width: 150px;
 }
-
 
 .previous {
-
- 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    width: auto;
-    border: none;
-    background: rgba(255, 255, 255, 0);
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  border: none;
+  background: rgba(255, 255, 255, 0);
+  cursor: pointer;
 }
 
 .next {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    width: auto;
-    border: none;
-    background: rgba(255, 255, 255, 0);
-    cursor: pointer;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  border: none;
+  background: rgba(255, 255, 255, 0);
+  cursor: pointer;
 }
 
 i {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 i:hover {
-    /* background: black; */
-    color: white;
-    box-shadow: 0 0 30px 0px rgba(65, 64, 64, 0.336);
-    transition: all 0.5s ease;
+  color: white;
+  box-shadow: 0 0 30px 0px rgba(65, 64, 64, 0.336);
+  transition: all 0.5s ease;
 }
-
 
 /*===========
 6 - 
-============*/
+============*/ 
+
+.hide {
+    display: none;
+}

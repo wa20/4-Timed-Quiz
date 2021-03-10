@@ -14,43 +14,51 @@
   </head>
 
   <body>
-        <aside class="header-bar" id="header-bar">
-        <label class="switch">
-            <input type="checkbox" id="theme-switcher" />
-            <span class="slider round"></span>
-        </label>
+    <aside class="header-bar" id="header-bar">
+      <label class="switch">
+        <input type="checkbox" id="theme-switcher" />
+        <span class="slider round"></span>
+      </label>
+      <!-- <label class="start-btn" id="start"></label>  -->
+      <div><h2>The Big Quiz</h2></div>
+      <div class="timer" id="timer"></div>
+    </aside>
 
-        <label class="start-btn" id="start"></label> 
-        <div><h2>The Big Quiz</h2></div>
-        <div class="timer" id="timer"></div>
-        </aside>
+    
 
-    <main class="container light" class="hide">  
-        <section class="screen hide" id="screen"> <!--Hide full contianer by default-->
-            <div class="Qs"></div>
-        </section>
+    <main class="container light">
 
-        <section class="ans-buttons" class="hide"> <!--Hide all buttones by default-->
-            <button class="ans-btn" id="a"></button>
-            <button class="ans-btn" id="b"></button>
-            <button class="ans-btn" id="c"></button>
-            <button class="ans-btn" id="d"></button>
-        </section>
+      <section class="screen hide" id="screen"><!-- hide class used to hid all buttons  -->
+        <div class="Qs"></div>
+      </section>
 
-        <nav class="bottom">
-            <button class="previous">
-                <i class="fas fa-caret-square-left"></i>
-            </button>  
 
-            <div class="ans-box" id="ans-box"></div>
-           
-            <button class="next">
-                <i class="fas fa-caret-square-right"></i>
-            </button>
-        </nav>
+     <!--   -->
+     <button class="start-btn" id="start-btn"> Start Game </button>
+     <button class="restart-btn" id="restart-btn"> Restart Quiz</button>
+
+
+
+
+      <section class="ans-buttons hide"><!-- hide class used to hid all buttons  -->
+        <button class="ans-btn" id="a"></button>
+        <button class="ans-btn" id="b"></button>
+        <button class="ans-btn" id="c"></button>
+        <button class="ans-btn" id="d"></button>
+      </section>
+
+      <nav class="bottom hide">
+        <button class="previous">
+          <i class="fas fa-caret-square-left"></i>
+        </button>
+
+        <div class="ans-box" id="ans-box"></div>
+
+        <button class="next">
+          <i class="fas fa-caret-square-right"></i>
+        </button>
+      </nav>
     </main>
-
   </body>
   <script src="script.js"></script>
-
 </html>

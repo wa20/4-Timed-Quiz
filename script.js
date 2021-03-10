@@ -1,4 +1,5 @@
-
+//============================================
+// light and Dark Theme Function.
 
 
 
@@ -23,7 +24,7 @@ themeSwitcher.addEventListener("click", function() {
     mode = "dark";
     htmlEl.setAttribute("class", "dark");
     headerEl.setAttribute("class", "header-bar-dark")
-    screenEl.setAttribute("class", "screen-black")
+    screenEl.setAttribute("class", "screen-black hide")
     
     for(i = 0; i < buttonEL.length; i++) {
     buttonEL[i].setAttribute("class", "ans-btn-dark") 
@@ -35,7 +36,7 @@ themeSwitcher.addEventListener("click", function() {
     mode = "light"
     htmlEl.setAttribute("class", "light");
     headerEl.setAttribute("class", "header-bar")
-    screenEl.setAttribute("class", "screen")
+    screenEl.setAttribute("class", "screen hide")
     
     for(i = 0; i < buttonEL.length; i++) {
     buttonEL[i].setAttribute("class", "ans-btn")   
@@ -45,6 +46,20 @@ themeSwitcher.addEventListener("click", function() {
 });
 
 // ============================================
+
+
+// -1 funtion to start the game with start button - this also starts the timer
+
+
+
+//-2 function to set the next question
+//  set an array of questions
+
+
+//- function to select answer
+
+
+// funtion to take you to the next question or previous question
 
 
 
