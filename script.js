@@ -1,12 +1,20 @@
 
+
+
+
+
+//============================================
+// light and Dark Theme Function.
+
 // Access toggle switch HTML element
-var themeSwitcher = document.querySelector("#theme-switcher");
-var htmlEl = document.querySelector("html");
-var headerEl = document.querySelector("aside");
-var buttonEL = document.querySelectorAll("button");
+const themeSwitcher = document.querySelector("#theme-switcher");
+const htmlEl = document.querySelector("html");
+const headerEl = document.querySelector("aside");
+const buttonEL = document.querySelectorAll("section > button");
+const screenEl = document.getElementById("screen");
 
 
-var mode = "light";
+let mode = "light";
 
 themeSwitcher.addEventListener("click", function() {
 
@@ -15,14 +23,28 @@ themeSwitcher.addEventListener("click", function() {
     mode = "dark";
     htmlEl.setAttribute("class", "dark");
     headerEl.setAttribute("class", "header-bar-dark")
-    buttonEL.setAttribute("class", "ans-btn-dark")
+    screenEl.setAttribute("class", "screen-black")
+    
+    for(i = 0; i < buttonEL.length; i++) {
+    buttonEL[i].setAttribute("class", "ans-btn-dark") 
+
+    }
   }
   // If mode is light, apply dark background 
   else {
-    mode ="light"
+    mode = "light"
     htmlEl.setAttribute("class", "light");
     headerEl.setAttribute("class", "header-bar")
-    buttonEL.setAttribute("class", "ans-btn")
+    screenEl.setAttribute("class", "screen")
+    
+    for(i = 0; i < buttonEL.length; i++) {
+    buttonEL[i].setAttribute("class", "ans-btn")   
+
+    }
   }
 });
+
+// ============================================
+
+
 

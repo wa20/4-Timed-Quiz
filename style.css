@@ -210,6 +210,23 @@ margin: 1rem;
 
 }
 
+/*----------
+ DARK MODE 
+ ----------*/
+ .screen-black {
+    position: relative;
+    display: flex;
+    width: 85%;
+    height: 30vh;
+    background-color: rgba(0, 0, 0, 0.699);
+    box-shadow: 0 10px 25px 1px rgba(0, 0, 0, 0.281);
+    border-radius: 5px;
+    padding: 30px;
+    margin: 1rem;
+
+ }
+
+
 
 /*===========
 4 -
