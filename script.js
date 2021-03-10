@@ -13,6 +13,8 @@ const htmlEl = document.querySelector("html");
 const headerEl = document.querySelector("aside");
 const buttonEL = document.querySelectorAll("section > button");
 const screenEl = document.getElementById("screen");
+let startbtnEl = document.getElementById("start-btn");
+let restartbtnEl = document.getElementById("restart-btn");
 
 
 let mode = "light";
@@ -25,6 +27,8 @@ themeSwitcher.addEventListener("click", function() {
     htmlEl.setAttribute("class", "dark");
     headerEl.setAttribute("class", "header-bar-dark")
     screenEl.setAttribute("class", "screen-black hide")
+    startbtnEl.setAttribute("class","start-btn-dark")
+    restartbtnEl.setAttribute("class", "restart-btn-dark hide")
     
     for(i = 0; i < buttonEL.length; i++) {
     buttonEL[i].setAttribute("class", "ans-btn-dark") 
@@ -37,6 +41,8 @@ themeSwitcher.addEventListener("click", function() {
     htmlEl.setAttribute("class", "light");
     headerEl.setAttribute("class", "header-bar")
     screenEl.setAttribute("class", "screen hide")
+    startbtnEl.setAttribute("class","start-btn")
+    restartbtnEl.setAttribute("class", "restart-btn hide")
     
     for(i = 0; i < buttonEL.length; i++) {
     buttonEL[i].setAttribute("class", "ans-btn")   
