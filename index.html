@@ -8,40 +8,34 @@
   </head>
 
   <body>
-    <aside class="header-bar" id="header-bar">
-
+        <aside class="header-bar" id="header-bar">
         <label class="switch">
-            <input type="checkbox" id="theme-switcher">
+            <input type="checkbox" id="theme-switcher" />
             <span class="slider round"></span>
         </label>
 
+        <label class="start-btn" id="start"></label> 
+        <div><h2>The Big Quiz</h2></div>
+        <div class="timer" id="timer"></div>
+        </aside>
 
-      <label class="start-btn" id="start"></label>
-      <div><h2>The Big Quiz</h2></div>
-      <div class="timer" id="timer"></div>
+    <main class="container light" class="hide">  <!--Hide full contianer by default-->
+        <section class="screen" id="screen">
+            <div class="Qs"></div>
+        </section>
 
+        <section class="ans-buttons" class="hide"> <!--Hide all buttones by default-->
+            <button class="ans-btn" id="a"></button>
+            <button class="ans-btn" id="b"></button>
+            <button class="ans-btn" id="c"></button>
+            <button class="ans-btn" id="d"></button>
+        </section>
 
-
-
-    </aside>
-
-    <main class="container light">
-
-      <section class="screen" id="screen">
-        <div class="Qs"></div>
-      </section>
-
-      <section class="ans-buttons">
-        <button class="ans-btn" id="a"></button>
-        <button class="ans-btn" id="b"></button>
-        <button class="ans-btn" id="c"></button>
-        <button class="ans-btn" id="d"></button>
-      </section>
-
-      <section calss="bottom">
-        <div class="ans-box" id="ans-box"></div>
-        <div></div>
-      </section>
+        <footer calss="bottom">
+            <!-- <button class="previous"></button>   -->
+            <div class="ans-box" id="ans-box"></div>
+            <!-- <button class="next"></button> -->
+        </footer>
     </main>
 
     <script src="script.js"></script>
