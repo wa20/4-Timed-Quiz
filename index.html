@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./style.css" />
     <title>The Big Quiz</title>
   </head>
@@ -19,8 +25,8 @@
         <div class="timer" id="timer"></div>
         </aside>
 
-    <main class="container light" class="hide">  <!--Hide full contianer by default-->
-        <section class="screen" id="screen">
+    <main class="container light" class="hide">  
+        <section class="screen hide" id="screen"> <!--Hide full contianer by default-->
             <div class="Qs"></div>
         </section>
 
@@ -31,13 +37,20 @@
             <button class="ans-btn" id="d"></button>
         </section>
 
-        <footer calss="bottom">
-            <!-- <button class="previous"></button>   -->
+        <nav class="bottom">
+            <button class="previous">
+                <i class="fas fa-caret-square-left"></i>
+            </button>  
+
             <div class="ans-box" id="ans-box"></div>
-            <!-- <button class="next"></button> -->
-        </footer>
+           
+            <button class="next">
+                <i class="fas fa-caret-square-right"></i>
+            </button>
+        </nav>
     </main>
 
-    <script src="script.js"></script>
   </body>
+  <script src="script.js"></script>
+
 </html>
