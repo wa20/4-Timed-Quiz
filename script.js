@@ -1,6 +1,31 @@
 //============================================
-// light and Dark Theme Function.
+// timer element
+let startGameEl = document.querySelector(".start-btn");
+let timerEl = document.querySelector(".timer");
 
+
+
+
+startGameEl.addEventListener("click", function setTimer(){
+
+    var seconds = 20;
+
+    var timerInterval = setInterval(function() {
+        seconds--;
+        timerEl.textContent = "Time:" + " " + seconds;
+    
+        if(seconds < 0) {
+
+          timerEl.textContent = 'Time: 00';  
+         
+          clearInterval(timerInterval);
+          
+          endGame();
+        }
+    
+      }, 1000);
+
+})
 
 
 
