@@ -21,7 +21,7 @@
       </label>
       <!-- <label class="start-btn" id="start"></label>  -->
       <div><h2>The Big Quiz</h2></div>
-      <div class="timer" id="timer"></div>
+      <div class="timer" id="timer">00:00</div>
     </aside>
 
     
@@ -35,24 +35,29 @@
 
      <!--   -->
 
-     <button class="start-btn" id="start-btn"> Start Game </button>
+     <button class="start-btn" id="start-btn"> Start Quiz </button>
      
-     <button class="restart-btn hide" id="restart-btn"> 
+     <button class="restart-btn hide" id="restart-btn"><!-- hide class used for restart button --> 
          <h4> Game Over </h4>
          <h5> Play Again? </h5>
      </button>
 
+    <section class="name-submit hide">
+     <input type="text" id="name" value="name" class="name" >
+     <input type="submit" id="submit" value="Submit" class="submit">
+    </section>
 
 
 
-      <section class="ans-buttons hide"><!-- hide class used to hid all buttons  -->
+
+      <section class="ans-buttons hide"> <!-- hide class used to hid all buttons  -->
         <button class="ans-btn" id="a"></button>
         <button class="ans-btn" id="b"></button>
         <button class="ans-btn" id="c"></button>
         <button class="ans-btn" id="d"></button>
       </section>
 
-      <nav class="bottom hide">
+      <nav class="bottom hide"> <!-- hide class used for nav items --> 
         <button class="previous">
           <i class="fas fa-caret-square-left"></i>
         </button>

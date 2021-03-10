@@ -107,6 +107,7 @@ justify-content: center;
 align-items: center;
 width: auto;
 height: auto;
+font-family:'Orbitron', sans-serif;
 font-size: 1.2rem;
 
 }
@@ -411,6 +412,55 @@ i:hover {
 
 /*===========
 7 - 
+============*/ 
+
+
+.name-submit {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+
+.name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    font-size: 20px;
+    border: none;
+    margin:5px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 30px 0px rgba(65, 64, 64, 0.336);
+
+}
+.name:hover {
+    border: 2px solid rgb(102, 102, 102);
+
+}
+
+.submit {
+    cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    border: none;
+    margin:5px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 30px 0px rgba(65, 64, 64, 0.336);
+    
+}
+.submit:hover {
+    border: 2px solid white;
+
+}
+
+
+/*===========
+8 - 
 ============*/ 
 
 .hide {
