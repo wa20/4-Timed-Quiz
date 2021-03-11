@@ -5,7 +5,7 @@
 const themeSwitcher = document.querySelector("#theme-switcher");
 const htmlEl = document.querySelector("html");
 const headerEl = document.querySelector("aside");
-const buttonEL = document.querySelectorAll("section > button");
+const buttonEl = document.querySelectorAll("section > button");
 const screenEl = document.getElementById("screen");
 let startbtnEl = document.getElementById("start-btn");
 let restartbtnEl = document.getElementById("restart-btn");
@@ -25,7 +25,7 @@ themeSwitcher.addEventListener("click", function() {
     restartbtnEl.setAttribute("class", "restart-btn-dark hide") // needs to be fixed
     
     for(i = 0; i < buttonEL.length; i++) {
-    buttonEL[i].setAttribute("class", "ans-btn-dark") 
+    buttonEl[i].setAttribute("class", "ans-btn-dark") 
 
     }
   }
@@ -38,8 +38,8 @@ themeSwitcher.addEventListener("click", function() {
     startbtnEl.setAttribute("class","start-btn") // needs to be fixed
     restartbtnEl.setAttribute("class", "restart-btn hide")  // needs to be fixed
     
-    for(i = 0; i < buttonEL.length; i++) {
-    buttonEL[i].setAttribute("class", "ans-btn")   
+    for(i = 0; i < buttonEl.length; i++) {
+    buttonEl[i].setAttribute("class", "ans-btn")   
 
     }
   }

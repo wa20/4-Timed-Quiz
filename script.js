@@ -1,34 +1,64 @@
 //============================================
+// light and Dark Theme Function.
+
+// Access toggle switch HTML element
+const themeSwitcher = document.querySelector("#theme-switcher");
+const htmlEl = document.querySelector("html");
+const headerEl = document.querySelector("aside");
+let buttonEl = document.querySelectorAll("section > button");
+let startbtnEl = document.getElementById("start-btn");
+let restartbtnEl = document.getElementById("restart-btn");
 
 
-
+//============================================
 // start game button
 const startGameEl = document.querySelector(".start-btn");
-const buttonEL = document.querySelectorAll("section > button");
+const answerBtnEl = document.getElementById("ans-btn"); //needed to unhide buttons
+// container elements
 const screenEl = document.getElementById("screen");
-
-
-let navEl = document.getElementById("bottom-nav")
-
-
-
+let navEl = document.getElementById("bottom-nav");
 // timer function
 let timerEl = document.querySelector(".timer");
 
+//============================================
 
+startGameEl.addEventListener("click", function (){ //game start button
 
-
-
-startGameEl.addEventListener("click", function (){
-
-    startbtnEl.classList.add("hide");
-    screenEl.classList.remove("hide");
-    buttonEL.classList.remove("hide");
+    var startButton = startbtnEl.classList.add("hide");
+    var screen =  screenEl.classList.remove("hide");
+    var navigation = navEl.classList.remove("hide");
+    var answerButton = answerBtnEl.classList.remove("hide");
     
-    navEl.classList.remove("hide")
+    let mode = "light";
 
-})
+    themeSwitcher.addEventListener("click", function(){
+        if(mode === "light"){
+            mode = "dark";
+            htmlEl.setAttribute("class", "dark"); 
+            headerEl.setAttribute("class", "header-bar-dark"); 
+            screen.setAttribute("class", "screen-black hide");
+            
+            for(i = 0; i < buttonEL.length; i++) {
+                buttonEl[i].setAttribute("class", "ans-btn-dark") 
+            
+                }
 
+        } else {
+            mode = "light";
+            htmlEl.setAttribute("class", "light");
+            headerEl.setAttribute("class", "header-bar") 
+            screen.setAttribute("class", "screen")
+            
+            for(i = 0; i < buttonEl.length; i++) {
+                buttonEl[i].setAttribute("class", "ans-btn")   
+            
+                }
+
+        }
+
+    })
+
+});
 
 
 startGameEl.addEventListener("click", function setTimer(){
@@ -57,65 +87,33 @@ startGameEl.addEventListener("click", function setTimer(){
         }
     
       }, 1000);
-
-        // new function ( )
-        // 
-        // 
-        //     
+         
 })
-
-
-
 
 
 
 
 // ============================================
 
-//============================================
-// light and Dark Theme Function.
-
-// Access toggle switch HTML element
-const themeSwitcher = document.querySelector("#theme-switcher");
-const htmlEl = document.querySelector("html");
-const headerEl = document.querySelector("aside");
-
-
-let startbtnEl = document.getElementById("start-btn");
-let restartbtnEl = document.getElementById("restart-btn");
-
-
 let mode = "light";
 
+//theme switching before the game starts
 themeSwitcher.addEventListener("click", function() {
 
   // If mode is dark, apply light background
   if (mode === "light") {
     mode = "dark";
     htmlEl.setAttribute("class", "dark"); 
-    headerEl.setAttribute("class", "header-bar-dark") 
-    screenEl.setAttribute("class", "screen-black hide") // needs to be fixed
-    startbtnEl.setAttribute("class","start-btn-dark") // needs to be fixed
-    restartbtnEl.setAttribute("class", "restart-btn-dark hide") // needs to be fixed
-    
-    for(i = 0; i < buttonEL.length; i++) {
-    buttonEL[i].setAttribute("class", "ans-btn-dark") 
-
-    }
+    headerEl.setAttribute("class", "header-bar-dark"); 
+    startbtnEl.setAttribute("class","start-btn-dark");
   }
   // If mode is light, apply dark background 
   else {
-    mode = "light"
+    mode = "light";
     htmlEl.setAttribute("class", "light");
-    headerEl.setAttribute("class", "header-bar") 
-    screenEl.setAttribute("class", "screen hide") // needs to be fixed
-    startbtnEl.setAttribute("class","start-btn") // needs to be fixed
-    restartbtnEl.setAttribute("class", "restart-btn hide")  // needs to be fixed
-    
-    for(i = 0; i < buttonEL.length; i++) {
-    buttonEL[i].setAttribute("class", "ans-btn")   
-
-    }
+    headerEl.setAttribute("class", "header-bar");
+    startbtnEl.setAttribute("class","start-btn");
+   
   }
 });
 
