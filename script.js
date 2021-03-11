@@ -1,3 +1,31 @@
+
+
+
+
+let question = [
+ 
+    { question : "who won the premier league last year",
+      answer: [ "Liverpool", "Man United", "Man City", "Chelsea"],
+      correctAnswer : "Liverpool"
+    },
+
+    { question : "who came second in the premier league last year",
+      answer: [ "Liverpool", "Man United", "Man City", "Chelsea"],
+      correctAnswer : "Man City"
+    }
+
+];
+
+let currentQsIndex = 0; //shows whatever qs we are displaying
+
+
+const buttonA = document.getElementById("a");
+const buttonB = document.getElementById("b");
+const buttonC = document.getElementById("c");
+const buttonD = document.getElementById("d");
+const displayQs = document.getElementById("Qs");
+
+
 //============================================
 // light and Dark Theme Function.
 
@@ -60,8 +88,8 @@ startGameEl.addEventListener("click", function () {
       mode = "dark";
       htmlEl.setAttribute("class", "dark");
       headerEl.setAttribute("class", "header-bar-dark");
-      screen.setAttribute("class", "screen-black hide"); //remove
-      startbtnEl.setAttribute("class", "hide"); // remove
+    //   screen.setAttribute("class", "screen-black hide"); //remove
+    //   startbtnEl.setAttribute("class", "hide"); // remove
 
       for (i = 0; i < buttonEL.length; i++) {
         buttonEl[i].setAttribute("class", "ans-btn-dark");
@@ -70,15 +98,55 @@ startGameEl.addEventListener("click", function () {
       mode = "light";
       htmlEl.setAttribute("class", "light");
       headerEl.setAttribute("class", "header-bar");
-      screen.setAttribute("class", "screen"); //remove
-      startbtnEl.setAttribute("class", "hide"); // remove
+    //   screen.setAttribute("class", "screen"); //remove
+    //   startbtnEl.setAttribute("class", "hide"); // remove
 
       for (i = 0; i < buttonEl.length; i++) {
         buttonEl[i].setAttribute("class", "ans-btn");
       }
     }
   });
+  
+  questions();
+
 });
+
+
+function questions(){
+
+    console.log("questions")
+    displayQs.textContent = question[currentQsIndex].question //this calls the question to the display screen
+    // buttonA.textContent =
+    var buttonArea = document.getElementById("ans-btn"); 
+buttonArea.innerHTML = "";
+    for (var i = 0; i < question[currentQsIndex].answer.length; i++){
+        var button = document.createElement("button");
+        button.setAttribute("class", "ans-btn");
+        button.textContent = question[currentQsIndex].answer[i];
+        button.onclick = checkAnswer;
+        buttonArea.appendChild(button); 
+    }
+
+
+
+
+
+}
+function checkAnswer(){
+    console.log(this.textContent); 
+    if(this.textContent === question[currentQsIndex].correctAnswer){
+        alert("Correct")
+    } else {
+        alert("Incorrect")
+    }
+    currentQsIndex++;
+    if(currentQsIndex === question.length){
+        endGame()
+    }else {
+        questions();
+    }
+}
+
 
 startGameEl.addEventListener("click", function setTimer() {
   var seconds = 20;
@@ -120,13 +188,16 @@ function endGame() {
 }
 
 
-submitButtonEl.addEventListener("click", function submit(){
 
 
-})
+
+// submitButtonEl.addEventListener("click", function submit(){
 
 
-playAgainEl.addEventListener("click", function playAgain(){
+// })
+
+
+// playAgainEl.addEventListener("click", function playAgain(){
 
     
-})
+// })
