@@ -33,6 +33,13 @@ ul {
  
 ===========*/
 
+
+/*===========
+ HTML set up
+=========== */
+
+
+@media(min-width: 600px) {
 html.light {
   background-image: linear-gradient(145deg, #221122 55%, #e66858 45%);
   /* color: rgb(128, 119, 119); */
@@ -40,19 +47,53 @@ html.light {
   font-family: "Rubik", sans-serif;
   font-size: 1.5rem;
   color: rgb(104, 100, 100);
+
+    }
+}
+
+@media(max-width: 600px){ 
+
+    html.light { 
+
+        background-image: linear-gradient(145deg, #221122 55%, #e66858 45%);
+        /* color: rgb(128, 119, 119); */
+        min-height: 100%;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.2rem;
+        color: rgb(104, 100, 100);
+    }
+    
 }
 
 /*============
  DARK MODE 
 =============*/
 
+
+@media(min-width: 600px){
 html.dark {
   background-image: linear-gradient(145deg, #130e13 55%, #1f100e 45%);
   color: white;
   font-family: "Rubik", sans-serif;
   font-size: 1.5rem;
   min-height: 100%;
+    }
 }
+
+
+
+@media(max-width: 600px){ 
+    
+    html.dark {
+        background-image: linear-gradient(145deg, #130e13 55%, #1f100e 45%);
+        color: white;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.2rem;
+        min-height: 100%;
+          }
+
+}
+
 
 /* =========
 ===========*/
@@ -465,4 +506,9 @@ i:hover {
 
 .hide {
     display: none;
+
+}
+
+.show {
+    display: visible;
 }
