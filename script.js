@@ -1,12 +1,86 @@
 //============================================
+
+
+
+// start game button
+const startGameEl = document.querySelector(".start-btn");
+const buttonEL = document.querySelectorAll("section > button");
+const screenEl = document.getElementById("screen");
+
+
+let navEl = document.getElementById("bottom-nav")
+
+
+
+// timer function
+let timerEl = document.querySelector(".timer");
+
+
+
+
+
+startGameEl.addEventListener("click", function (){
+
+    startbtnEl.classList.add("hide");
+    screenEl.classList.remove("hide");
+    buttonEL.classList.remove("hide");
+    
+    navEl.classList.remove("hide")
+
+})
+
+
+
+startGameEl.addEventListener("click", function setTimer(){
+
+    var seconds = 20;
+
+    var timerInterval = setInterval(function() {
+        seconds--;
+        timerEl.textContent = "Time:" + " " + seconds;
+
+        // if(correct answer is clicekd){
+
+            // then restart the timer and move to the next question 
+            // return timerInterval
+            // nextQuestion
+
+        // } else 
+    
+        if(seconds === 0) {
+
+          timerEl.textContent = 'Time: 0';  
+         
+          clearInterval(timerInterval);
+          
+          endGame();
+        }
+    
+      }, 1000);
+
+        // new function ( )
+        // 
+        // 
+        //     
+})
+
+
+
+
+
+
+
+// ============================================
+
+//============================================
 // light and Dark Theme Function.
 
 // Access toggle switch HTML element
 const themeSwitcher = document.querySelector("#theme-switcher");
 const htmlEl = document.querySelector("html");
 const headerEl = document.querySelector("aside");
-const buttonEL = document.querySelectorAll("section > button");
-const screenEl = document.getElementById("screen");
+
+
 let startbtnEl = document.getElementById("start-btn");
 let restartbtnEl = document.getElementById("restart-btn");
 
@@ -44,56 +118,6 @@ themeSwitcher.addEventListener("click", function() {
     }
   }
 });
-
-//============================================
-
-
-
-// timer element
-let startGameEl = document.querySelector(".start-btn");
-let timerEl = document.querySelector(".timer");
-
-
-
-
-startGameEl.addEventListener("click", function setTimer(startGame){
-
-    var seconds = 20;
-
-    var timerInterval = setInterval(function() {
-        seconds--;
-        timerEl.textContent = "Time:" + " " + seconds;
-
-        // if(correct answer is clicekd){
-
-            // then restart the timer and move to the next question 
-            // return timerInterval
-
-        // } else 
-    
-        if(seconds === 0) {
-
-          timerEl.textContent = 'Time: 0';  
-         
-          clearInterval(timerInterval);
-          
-          endGame();
-        }
-    
-      }, 1000);
-
-        // new function ( )
-        // 
-        // 
-        //     
-})
-
-
-
-
-
-
-// ============================================
 
 // startGameEl.addEventListener("click", function setTimer(){
 
