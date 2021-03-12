@@ -127,4 +127,3 @@ startGameEl.addEventListener("click", function setTimer(startGame){
 //-3 results page and submit button
 
 
-

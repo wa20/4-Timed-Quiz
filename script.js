@@ -2,13 +2,13 @@ let question = [
   {
     question:
       "If soccer is called football in England, what is American football called in England?",
-    answer: ["American football", "Combball", "Handball", "Touchdown"],
+    answer: ["Combball", "Handball", "American football", "Touchdown"],
     correctAnswer: "American football",
   },
 
   {
     question: "What is the largest country in the world?",
-    answer: ["Russia", "Canada", "China", "United States"],
+    answer: ["Canada", "China", "Russia", "United States"],
     correctAnswer: "Russia",
   },
 
@@ -21,19 +21,19 @@ let question = [
 
   {
     question: "What is the 100th digit of Pi?",
-    answer: ["9", "4", "7", "2"],
+    answer: ["4", "7", "2", "9"],
     correctAnswer: "9",
   },
 
   {
     question: "A doctor with a PhD is a doctor of what?",
-    answer: ["Philosophy", "Pschology", "Phrenology", "Physical Therapy"],
+    answer: ["Pschology", "Philosophy", "Phrenology", "Physical Therapy"],
     correctAnswer: "Philosophy",
   },
 
   {
     question: "What year did World War I begin?",
-    answer: ["1914", "1905", "1919", "1925"],
+    answer: ["1905", "1919", "1925", "1914"],
     correctAnswer: "1914",
   },
 
@@ -53,8 +53,8 @@ let question = [
   {
     question: "What is the tallest mountain in Canada?",
     answer: [
-      "Mount Logan",
       "Mont Tremblant",
+      "Mount Logan",
       "Whistler Mountain",
       "Blue Mountain",
     ],
@@ -63,13 +63,13 @@ let question = [
 
   {
     question: "Which of these is a stop codon in DNA?",
-    answer: ["TAA", "ACT", "ACA", "GTA"],
+    answer: ["ACT", "ACA", "TAA", "GTA"],
     correctAnswer: "TAA",
   },
 
   {
     question: "Which of these countries is NOT a part of the Asian continent?",
-    answer: ["Suriname", "Georgia", "Russia", "Singapore"],
+    answer: ["Georgia", "Russia", "Singapore", "Suriname"],
     correctAnswer: "Suriname",
   },
 
@@ -81,7 +81,7 @@ let question = [
 
   {
     question: "Which of these is a stop codon in DNA?",
-    answer: ["TAA", "ACT", "ACA", "GTA"],
+    answer: ["ACT", "TAA", "ACA", "GTA"],
     correctAnswer: "TAA",
   },
 
@@ -94,25 +94,25 @@ let question = [
   {
     question: "What is the name of the Canadian national anthem?",
     answer: [
-      "O Canada",
       "O Red Maple",
       "Leaf-Spangled Banner",
       "March of the Puck Drop",
+      "O Canada",
     ],
     correctAnswer: "O Canada",
   },
 
   {
     question: "Which of these is NOT an Australian state or territory?",
-    answer: ["Albera", "New South Wales", "Victoria", "Queensland"],
+    answer: ["New South Wales", "Victoria", "Albera", "Queensland"],
     correctAnswer: "Alberta",
   },
 
   {
     question: "Where is the Luxor Hotel & Casino located?",
     answer: [
-      "Paradise, Nevada",
       "Las Vegas, Nevada",
+      "Paradise, Nevada",
       "Winchester, Nevada",
       "Jackpot, Nevada",
     ],
@@ -127,8 +127,52 @@ let question = [
 
   {
     question: "What is considered the rarist form of color blindness?",
-    answer: ["Blue", "Red", "Green", "Purple"],
+    answer: ["Red", "Green", "Purple", "Blue"],
     correctAnswer: "Blue",
+  },
+
+  {
+    question: "Which of these species is not extinct?",
+    answer: [
+      "Japanese sea lion",
+      "Tasmanian tiger",
+      "Komodo dragon",
+      "Saudi gazelle",
+    ],
+    correctAnswer: "Komodo dragon",
+  },
+
+  {
+    question:
+      "The emblem on the flag of the Republic of Tajikistan features a sunrise over mountains below what symbol?",
+    answer: ["Bird", "Sickle", "Crown", "Tree"],
+    correctAnswer: "Crown",
+  },
+
+  {
+    question: "Which ocean borders the west coast of the United States?",
+    answer: ["Atlantic", "Pacific", "Indian", "Arctic"],
+    correctAnswer: "Pacific",
+  },
+
+  {
+    question:
+      "What country saw a world record 315 million voters turn out for elections on May 20, 1991?",
+    answer: ["India", "United States of America", "Soviet Union", "Poland"],
+    correctAnswer: "India",
+  },
+
+  {
+    question: "How many manned moon landings have there been?",
+    answer: ["3", "6", "5", "9"],
+    correctAnswer: "6",
+  },
+
+  {
+    question: "Which is the largest freshwater lake in the world?",
+    answer: ["Lake Superior", "Caspian Sea", "Lake Michigan", "Lake Huron"],
+
+    correctAnswer: "Lake Superior",
   },
 ];
 
@@ -136,10 +180,6 @@ let currentQsIndex = 0; //shows whatever qs we are displaying
 
 //===========================================
 
-// const buttonA = document.getElementById("a"); not needed
-// const buttonB = document.getElementById("b");
-// const buttonC = document.getElementById("c");
-// const buttonD = document.getElementById("d");
 const displayQs = document.getElementById("Qs");
 
 //============================================
@@ -151,7 +191,6 @@ const htmlEl = document.querySelector("html");
 const headerEl = document.querySelector("aside");
 let buttonEl = document.querySelectorAll("section > button");
 let startbtnEl = document.getElementById("start-btn");
-let restartbtnEl = document.getElementById("restart-btn");
 
 //============================================
 // start game button
@@ -186,12 +225,12 @@ themeSwitcher.addEventListener("click", function () {
 });
 
 //=======================================
+// function startQuiz() {
 
-startGameEl.addEventListener("click", function () {
+startGameEl.addEventListener("click", function startGame() {
   //game start button
 
   var startButton = startbtnEl.classList.add("hide");
-  var restartbtn = restartbtnEl.classList.add("hide");
   var screen = screenEl.classList.remove("hide");
   var navigation = navEl.classList.remove("hide");
   var answerButton = answerBtnEl.classList.remove("hide");
@@ -225,11 +264,12 @@ startGameEl.addEventListener("click", function () {
 
   questions();
 });
+// }
 
 function questions() {
   // question section, to input question onto display screen
 
-  console.log("questions");
+  console.log("questions"); //test
   displayQs.textContent = question[currentQsIndex].question; //this calls the question to the display screen
   // buttonA.textContent =
   var buttonArea = document.getElementById("ans-btn"); // varaible created from ans-btn section
@@ -242,19 +282,26 @@ function questions() {
     buttonArea.appendChild(button);
   }
 }
-
+let seconds; // fix this
+let score = 0;
+let incorrect = 0;
 function checkAnswer() {
+    
   // check if answer is correct
   console.log(this.textContent);
   if (this.textContent === question[currentQsIndex].correctAnswer) {
-    button.setAttribute("class", "correct");
-
+    // button.setAttribute("class", "correct");
     alert("Correct");
+    score += 1;
+    console.log(score); // testing score 
+
     // setTimer()
   } else {
     alert("Incorrect");
-    second -= 3;
-    timerEl.textContent = "Time:" + " " + seconds;
+    incorrect += 1;
+    console.log(incorrect); // testing incorrect score 
+    // second -= 3;
+    timerEl.textContent = "Time:" + " " + seconds; //test section
   }
   currentQsIndex++;
   if (currentQsIndex === question.length) {
@@ -264,9 +311,10 @@ function checkAnswer() {
   }
 }
 
-var seconds;
+
+
 startGameEl.addEventListener("click", function setTimer() {
-  seconds = 20;
+  let seconds = 20;
 
   var timerInterval = setInterval(function () {
     seconds--;
@@ -292,16 +340,52 @@ startGameEl.addEventListener("click", function setTimer() {
 
 // ============================================
 
-// startGameEl.addEventListener("click", function setTimer(){
+let submitNameEl = document.getElementById("submit-name");
+let submitButtonEl = document.getElementById("submit");
 
-// }
+function endGame() {
+  displayQs.textContent = "Game Over";
+  submitNameEl.classList.remove("hide");
+  navEl.classList.add("hide");
+  answerBtnEl.classList.add("hide");
+}
 
-function endGame() {}
+let restartbtnEl = document.getElementById("restart-btn");
 
-// submitButtonEl.addEventListener("click", function submit(){
+submitButtonEl.addEventListener("click", function submit() {
+  displayQs.textContent = " ";
 
-// })
+  submitNameEl.classList.add("hide");
+  restartbtnEl.classList.remove("hide");
+});
 
-// playAgainEl.addEventListener("click", function playAgain(){
+//==============================================
 
-// })
+function renderResults() {
+
+var userAnswer = " ";
+var numCorrect = 0;
+
+var correctAnswer = JSON.parse(localStorage.getItem(""))
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+let playAgainEl = document.getElementById("restart-btn");
+
+playAgainEl.addEventListener("click", function playAgain() {
+  startGame();
+});

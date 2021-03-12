@@ -142,6 +142,31 @@ aside.header-bar-dark {
 ===========*/
 
 
+
+@media(min-width: 800px){ 
+    article.p {
+        display: flex;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 20px;
+        margin: 20px;
+
+    }
+
+}
+
+@media(max-width: 800px){ 
+    article.p{
+        text-align: center;
+        font-size: 0.7rem;
+        padding: 20px;
+        margin: 20px;
+
+    }
+    
+}
+
+
 .timer {
 display: flex;
 justify-content: center;
@@ -214,6 +239,9 @@ input:checked + .slider:before {
 
 .container {
   display: flex;
+  justify-content: center;
+  align-items:center;
+  
   position: absolute;
   top: 6rem;
   flex-direction: column;
@@ -294,7 +322,8 @@ input:checked + .slider:before {
 .screen {
   position: relative;
   display: flex;
-  
+  justify-content: center;
+  align-items:center;
 
   width: 85%;
   height: 30vh;
@@ -315,6 +344,8 @@ input:checked + .slider:before {
 .screen-black {
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items:center;
   width: 85%;
   height: 30vh;
   background-color: rgba(0, 0, 0, 0.699);
@@ -524,4 +555,10 @@ i:hover {
 
 .show {
     display: visible;
+}
+
+.start-restart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

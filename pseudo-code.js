@@ -1,6 +1,6 @@
 
 //[start function]
-// funtion to start the game with start button
+// function to start the game with start button
 // when you start the game the start button is hidden
 // when the start button is hidden the display screen and answer buttons appear
 // >> (triggers Qs function) the display screen contains the first questions
@@ -18,11 +18,11 @@
 
 
 //[Qs function]
-// the qs function is activated once the user presses start
-// the function looks at a list of questions and selects one at random
+// the qs function is activated once the user presses the start button
+// the function looks at a list of questions and selects one at random (shuffles them)
 // the questions is displayed on the display screen
-// the answers to question are shown on the answer buttons
-//
+// the answers to question are shown on the answer button
+
 
 
 
