@@ -260,10 +260,11 @@ input:checked + .slider:before {
 
 
 /*==============
-3 - Start and Restart buttuns
+3 - Start, Restart and View Score buttons
 =======================*/
 
-.start-btn, .restart-btn {
+
+.start-btn, .restart-btn, .viewScore-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -282,11 +283,11 @@ input:checked + .slider:before {
       border: 2px solid white;
   }
 
-  /*----------
-   DARK MODE 
+  /*---------- 
+   DARK MODE ---- not needed
    ----------*/
   
-   .start-btn-dark, .restart-btn-dark {
+   .start-btn-dark, .restart-btn-dark, .viewScore-btn-dark  {
     background: black;
     color: white;
     display: flex;
@@ -307,11 +308,6 @@ input:checked + .slider:before {
   .start-btn-dark:hover, .restart-btn-dark:hover {
       border: 2px solid white;
   }
-
-
-
-
-
 
 
 

@@ -189,6 +189,7 @@ const displayQs = document.getElementById("Qs");
 const themeSwitcher = document.querySelector("#theme-switcher");
 const htmlEl = document.querySelector("html");
 const headerEl = document.querySelector("aside");
+const viewScoreEl = document.getElementById("viewScore-btn");
 let buttonEl = document.querySelectorAll("section > button");
 let startbtnEl = document.getElementById("start-btn");
 
@@ -205,7 +206,6 @@ let timerEl = document.querySelector(".timer");
 //============================================
 
 let mode = "light";
-
 //theme switching before the game starts
 themeSwitcher.addEventListener("click", function () {
   // If mode is dark, apply light background
@@ -231,6 +231,7 @@ startGameEl.addEventListener("click", function startGame() {
   //game start button
 
   var startButton = startbtnEl.classList.add("hide");
+  var viewScore = viewScoreEl.classList.add("hide");
   var screen = screenEl.classList.remove("hide");
   var navigation = navEl.classList.remove("hide");
   var answerButton = answerBtnEl.classList.remove("hide");
@@ -238,33 +239,23 @@ startGameEl.addEventListener("click", function startGame() {
   let mode = "light";
 
   themeSwitcher.addEventListener("click", function () {
-    //is there anythin i can add here?
     if (mode === "light") {
       mode = "dark";
       htmlEl.setAttribute("class", "dark");
       headerEl.setAttribute("class", "header-bar-dark");
-      //   screen.setAttribute("class", "screen-black hide"); //remove
-      //   startbtnEl.setAttribute("class", "hide"); // remove
-
-      //   for (i = 0; i < buttonEL.length; i++) {
-      //     buttonEl[i].setAttribute("class", "ans-btn-dark");
-      //   }
     } else {
       mode = "light";
       htmlEl.setAttribute("class", "light");
       headerEl.setAttribute("class", "header-bar");
-      //   screen.setAttribute("class", "screen"); //remove
-      //   startbtnEl.setAttribute("class", "hide"); // remove
-
-      //   for (i = 0; i < buttonEl.length; i++) {
-      //     buttonEl[i].setAttribute("class", "ans-btn");
-      //   }
     }
   });
 
   questions();
 });
 // }
+
+//============================================================
+// questions function
 
 function questions() {
   // question section, to input question onto display screen
@@ -279,27 +270,30 @@ function questions() {
     button.setAttribute("class", "ans-btn");
     button.textContent = question[currentQsIndex].answer[i];
     button.onclick = checkAnswer;
-    buttonArea.appendChild(button);
+    buttonArea.appendChild(button); // creates the buttons in the space
   }
 }
+
+//=============================================
+//check quetion function
 let seconds; // fix this
 let score = 0;
 let incorrect = 0;
+
 function checkAnswer() {
-    
   // check if answer is correct
   console.log(this.textContent);
   if (this.textContent === question[currentQsIndex].correctAnswer) {
     // button.setAttribute("class", "correct");
     alert("Correct");
     score += 1;
-    console.log(score); // testing score 
+    console.log(score); // testing score
 
     // setTimer()
   } else {
     alert("Incorrect");
     incorrect += 1;
-    console.log(incorrect); // testing incorrect score 
+    console.log(incorrect); // testing incorrect score
     // second -= 3;
     timerEl.textContent = "Time:" + " " + seconds; //test section
   }
@@ -310,8 +304,6 @@ function checkAnswer() {
     questions();
   }
 }
-
-
 
 startGameEl.addEventListener("click", function setTimer() {
   let seconds = 20;
@@ -362,30 +354,32 @@ submitButtonEl.addEventListener("click", function submit() {
 //==============================================
 
 function renderResults() {
+  var userAnswer = " ";
+  var numCorrect = 0;
 
-var userAnswer = " ";
-var numCorrect = 0;
+  var userName = userNameEl.value.trim();
 
-var correctAnswer = JSON.parse(localStorage.getItem(""))
+
+
+
+  if (name !== " ") {
+    var correctAnswer = JSON.parse(window.localStorage.getItem("")) || [];
+
+  }
+
+
+
 
 
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 let playAgainEl = document.getElementById("restart-btn");
 
 playAgainEl.addEventListener("click", function playAgain() {
-  startGame();
+  startbtnEl.classList.remove("hide");
+  screenEl.classList.add("hide");
+  restartbtnEl.classList.add("hide");
+  // var navigation = navEl.classList.remove("hide");
+  // var answerButton = answerBtnEl.classList.remove("hide");
 });
