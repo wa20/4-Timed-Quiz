@@ -336,7 +336,7 @@ const userNameEl = document.getElementById("name");
 function saveScore() { 
    
    var highScore = {
-       user: userNameEl.value.trim(),
+       Name: userNameEl.value.trim(),
        Correct: score,
        Wrong: incorrect,
    };
@@ -345,60 +345,59 @@ function saveScore() {
 
     }
 
+// saveScore();    
+
 // ============================================
 // retrieve user score
 
+
 function renderResults() {
 
-    var lastScore =JSON.parse(localStorage.getItem("highScore"));
+    var highScore = {
+        Name: userNameEl.value.trim(),
+        Correct: score,
+        Wrong: incorrect,
+    };
+
+    var lastScore = JSON.parse(localStorage.getItem("highScore"));
 
     if(lastScore !== null) {
-        Document.getElementById("Qs").innerHTML = lastScore
+        document.getElementById("Qs").innerHTML = lastScore.Name;
+        document.getElementById("Qs").innerHTML = lastScore.Correct;
+        document.getElementById("Qs").innerHTML = lastScore.Wrong;
+        
 
     } else {
-        return;
+        return "No Results";
     }
 
-
 }
-
+// console.log(renderResults());
 
 
 // ============================================
 
 submitButtonEl.addEventListener("click", function submit(event) {
 
-    event.preventDefault(); // stops from refreshing
+    // event.preventDefault(); // stops from refreshing
 
     submitNameEl.classList.add("hide");
     restartbtnEl.classList.remove("hide");
-
-    saveScore();
     
-    displayQs.textContent = renderResults();
-
-
+    saveScore();
+    renderResults();
 
   });
 
+
+viewScoreEl.addEventListener("click", function viewscore(event) {
   
-// function viewScores() {
-//     localStorage.setItem("highScore", score);
-//     localStorage.setItem("")
-
-
-// }
-
-
-
-  viewScoreEl.addEventListener("click", function viewscore(event) {
-  
-      
       viewScoreEl.classList.add("hide");
     //   startbtnEl.classList.add("hide");
       screenEl.classList.remove("hide");
-
-    //   viewScores()
+    
+      saveScore();  
+    renderResults()
   
   });
 
