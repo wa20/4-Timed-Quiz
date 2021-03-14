@@ -271,7 +271,7 @@ function questions() {
 
 //=============================================
 //check question function
-let seconds = 20;
+let seconds = 10;
 let score = 0;
 let incorrect = 0;
 
@@ -301,18 +301,9 @@ function checkAnswer() {
 }
 
 startGameEl.addEventListener("click", function setTimer() {
-  
   var timerInterval = setInterval(function () {
     seconds--;
     timerEl.textContent = "Time:" + " " + seconds;
-
-    // if(correct answer or next/ previous button is clicekd){
-
-    // then restart the timer and move to the next question
-    // return timerInterval
-    // nextQuestion
-
-    // } else
 
     if (seconds === 0) {
       timerEl.textContent = "Time: 0";
@@ -326,101 +317,86 @@ startGameEl.addEventListener("click", function setTimer() {
 
 // ============================================
 
+
 let submitNameEl = document.getElementById("submit-name");
 let submitButtonEl = document.getElementById("submit");
 
 // ============================================
-// save user score 
+// save user score
 const userNameEl = document.getElementById("name");
 
-function saveScore() { 
-   
-   var highScore = {
-       Name: userNameEl.value.trim(),
-       Correct: score,
-       Wrong: incorrect,
-   };
 
-    localStorage.setItem("highScore", JSON.stringify(highScore));
+function saveScore() {
+  var highScore = {
+    Name: "Name: " + userNameEl.value.trim(),
+    Correct: "Correct: " + score,
+    Wrong: "Incorrect: " + incorrect,
+  };
 
-    }
-
-// saveScore();    
+  localStorage.setItem("highScore", JSON.stringify(highScore));
+}
 
 // ============================================
 // retrieve user score
 
-
 function renderResults() {
+  var highScore = {
+    Name: "Name: " + userNameEl.value.trim(),
+    Correct: "Correct: " + score,
+    Wrong: "Incorrect: " + incorrect,
+  };
 
-    var highScore = {
-        Name: userNameEl.value.trim(),
-        Correct: score,
-        Wrong: incorrect,
-    };
+  var lastScore = JSON.parse(localStorage.getItem("highScore"));
 
-    var lastScore = JSON.parse(localStorage.getItem("highScore"));
-
-    if(lastScore !== null) {
-        document.getElementById("Qs").innerHTML = lastScore.Name;
-        document.getElementById("Qs").innerHTML = lastScore.Correct;
-        document.getElementById("Qs").innerHTML = lastScore.Wrong;
-        
-
-    } else {
-        return "No Results";
-    }
-
+  if (lastScore !== null) {
+    document.getElementById("userName").innerHTML = lastScore.Name;
+    document.getElementById("correctAns").innerHTML = lastScore.Correct;
+    document.getElementById("wrongAns").innerHTML = lastScore.Wrong;
+  } else {
+    return "No Scores";
+  }
 }
 // console.log(renderResults());
 
-
 // ============================================
+
+
 
 submitButtonEl.addEventListener("click", function submit(event) {
-
-    // event.preventDefault(); // stops from refreshing
-
-    submitNameEl.classList.add("hide");
-    restartbtnEl.classList.remove("hide");
+    event.preventDefault();
     
     saveScore();
-    renderResults();
+   
+    // stops from refreshing
+    screenEl.classList.remove("hide");
+    submitNameEl.classList.add("hide");
+    restartbtnEl.classList.remove("hide");
 
   });
 
 
+
+  submitButtonEl.addEventListener("click", function submit(event) {
+    // event.preventDefault();
+
+     renderResults();
+
+
+  });
+
+
+// =====================================================================
 viewScoreEl.addEventListener("click", function viewscore(event) {
-  
-      viewScoreEl.classList.add("hide");
-    //   startbtnEl.classList.add("hide");
-      screenEl.classList.remove("hide");
-    
-      saveScore();  
-    renderResults()
-  
-  });
+  event.preventDefault();
 
+  viewScoreEl.classList.add("hide");
 
-// ===========================================
-// submit function button
-
-
-
-// submitButtonEl.addEventListener("click", function submit() {
-    
-  
-//     submitNameEl.classList.add("hide");
-//     restartbtnEl.classList.remove("hide");
-//     displayQs.textContent = saveScore();
-
-
-//   });
-  
+  screenEl.classList.remove("hide");
+  //   saveScore();
+  renderResults();
+});
 
 // ============================================
-
-
 
 function endGame() {
   displayQs.textContent = "Game Over";
@@ -433,7 +409,6 @@ let restartbtnEl = document.getElementById("restart-btn");
 
 //==============================================
 
-
 let playAgainEl = document.getElementById("restart-btn");
 
 playAgainEl.addEventListener("click", function playAgain() {
@@ -444,6 +419,3 @@ playAgainEl.addEventListener("click", function playAgain() {
   // var navigation = navEl.classList.remove("hide");
   // var answerButton = answerBtnEl.classList.remove("hide");
 });
-
-
-

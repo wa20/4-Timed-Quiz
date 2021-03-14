@@ -14,70 +14,65 @@
   </head>
 
   <body>
-    
-
     <aside class="header-bar" id="header-bar">
       <label class="switch">
         <input type="checkbox" id="theme-switcher" />
         <span class="slider round"></span>
       </label>
       <!-- <label class="start-btn" id="start"></label>  -->
-      <div class="title-header"> 
+      <div class="title-header">
         <h2>The Big Quiz</h2>
       </div>
       <div class="timer" id="timer">Time :20</div>
     </aside>
 
-      <!-- <aritcle>
+    <!-- <aritcle>
         <p>How many can you answer in 60 seconds</p>
       </articel> -->
 
     <main class="container light">
-
-      
-      <section class="screen hide" id="screen"><!-- hide class used to hid all buttons  -->
-        <div class="Qs" id="Qs"></div>
+      <section class="screen hide" id="screen">
+        <!-- hide class used to hid all buttons  -->
+        <div class="Qs" id="Qs">
+          <p id="userName"></p>
+          <p id="correctAns"></p>
+          <p id="wrongAns"></p>
+        </div>
       </section>
 
+      <section class="start-restart">
+        <button class="start-btn" id="start-btn">Start Quiz</button>
+        <button class="viewScore-btn" id="viewScore-btn">View Scores</button>
+        <button class="restart-btn hide" id="restart-btn">
+          <!-- hide class used for restart button -->
+          <!-- <h4> Game Over </h4> -->
+          <h4>Play Again?</h4>
+        </button>
+      </section>
 
-     
+      <section class="name-submit hide" id="submit-name">
+        <!-- submit section -->
+        <input type="text" id="name" class="name" />
+        <input type="submit" id="submit" value="Submit" class="submit" />
+      </section>
 
-     <section class="start-restart">
-
-     <button class="start-btn" id="start-btn"> Start Quiz </button>
-     <button class="viewScore-btn" id="viewScore-btn"> View Scores </button>
-     <button class="restart-btn hide" id="restart-btn"><!-- hide class used for restart button --> 
-         <!-- <h4> Game Over </h4> -->
-         <h4> Play Again? </h4>
-     </button>
-
-    </section>
-
-    <section class="name-submit hide" id="submit-name"> <!-- submit section -->
-     <input type="text" id="name" class="name" >
-     <input type="submit" id="submit" value="Submit" class="submit">
-    </section>
-
-
-
-
-      <section class="ans-buttons hide" id="ans-btn"> <!-- hide class used to hid all buttons  -->
+      <section class="ans-buttons hide" id="ans-btn">
+        <!-- hide class used to hid all buttons  -->
         <!-- <button class="ans-btn" id="a"></button>
         <button class="ans-btn" id="b"></button>
         <button class="ans-btn" id="c"></button>
         <button class="ans-btn" id="d"></button> -->
       </section>
 
-      <nav class="bottom hide" id="bottom-nav"> 
-        <button class="previous">
+      <nav class="bottom hide" id="bottom-nav">
+        <!-- <button class="previous">
           <i class="fas fa-caret-square-left"></i>
-        </button>
+        </button> -->
         <!-- <div class="ans-box" id="ans-box"></div> -->
-        <button class="next">
+        <!-- <button class="next">
           <i class="fas fa-caret-square-right"></i>
-        </button>
+        </button> -->
       </nav>
-
     </main>
   </body>
   <script src="script.js"></script>
