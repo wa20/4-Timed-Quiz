@@ -176,15 +176,10 @@ let question = [
   },
 ];
 
-let currentQsIndex = 0; //shows whatever qs we are displaying
-
-//===========================================
-
+let currentQsIndex = 0; //shows which question we are displaying
 const displayQs = document.getElementById("Qs");
 
 //============================================
-// light and Dark Theme Function.
-
 // Access toggle switch HTML element
 const themeSwitcher = document.querySelector("#theme-switcher");
 const htmlEl = document.querySelector("html");
@@ -204,10 +199,10 @@ let navEl = document.getElementById("bottom-nav");
 let timerEl = document.querySelector(".timer");
 
 //============================================
-
+// light and Dark Theme Function.
 let mode = "light";
 //theme switching before the game starts
-themeSwitcher.addEventListener("click", function () {
+themeSwitcher.addEventListener("click", function (event) {
   // If mode is dark, apply light background
   if (mode === "light") {
     mode = "dark";
@@ -227,7 +222,7 @@ themeSwitcher.addEventListener("click", function () {
 //=======================================
 // function startQuiz() {
 
-startGameEl.addEventListener("click", function startGame() {
+startGameEl.addEventListener("click", function startGame(event) {
   //game start button
 
   var startButton = startbtnEl.classList.add("hide");
@@ -275,8 +270,8 @@ function questions() {
 }
 
 //=============================================
-//check quetion function
-let seconds; // fix this
+//check question function
+let seconds = 20;
 let score = 0;
 let incorrect = 0;
 
@@ -306,8 +301,7 @@ function checkAnswer() {
 }
 
 startGameEl.addEventListener("click", function setTimer() {
-  let seconds = 20;
-
+  
   var timerInterval = setInterval(function () {
     seconds--;
     timerEl.textContent = "Time:" + " " + seconds;
@@ -335,6 +329,100 @@ startGameEl.addEventListener("click", function setTimer() {
 let submitNameEl = document.getElementById("submit-name");
 let submitButtonEl = document.getElementById("submit");
 
+// ============================================
+// save user score 
+const userNameEl = document.getElementById("name");
+
+function saveScore() { 
+   
+   var highScore = {
+       user: userNameEl.value.trim(),
+       Correct: score,
+       Wrong: incorrect,
+   };
+
+    localStorage.setItem("highScore", JSON.stringify(highScore));
+
+    }
+
+// ============================================
+// retrieve user score
+
+function renderResults() {
+
+    var lastScore =JSON.parse(localStorage.getItem("highScore"));
+
+    if(lastScore !== null) {
+        Document.getElementById("Qs").innerHTML = lastScore
+
+    } else {
+        return;
+    }
+
+
+}
+
+
+
+// ============================================
+
+submitButtonEl.addEventListener("click", function submit(event) {
+
+    event.preventDefault(); // stops from refreshing
+
+    submitNameEl.classList.add("hide");
+    restartbtnEl.classList.remove("hide");
+
+    saveScore();
+    
+    displayQs.textContent = renderResults();
+
+
+
+  });
+
+  
+// function viewScores() {
+//     localStorage.setItem("highScore", score);
+//     localStorage.setItem("")
+
+
+// }
+
+
+
+  viewScoreEl.addEventListener("click", function viewscore(event) {
+  
+      
+      viewScoreEl.classList.add("hide");
+    //   startbtnEl.classList.add("hide");
+      screenEl.classList.remove("hide");
+
+    //   viewScores()
+  
+  });
+
+
+// ===========================================
+// submit function button
+
+
+
+// submitButtonEl.addEventListener("click", function submit() {
+    
+  
+//     submitNameEl.classList.add("hide");
+//     restartbtnEl.classList.remove("hide");
+//     displayQs.textContent = saveScore();
+
+
+//   });
+  
+
+// ============================================
+
+
+
 function endGame() {
   displayQs.textContent = "Game Over";
   submitNameEl.classList.remove("hide");
@@ -344,42 +432,19 @@ function endGame() {
 
 let restartbtnEl = document.getElementById("restart-btn");
 
-submitButtonEl.addEventListener("click", function submit() {
-  displayQs.textContent = " ";
-
-  submitNameEl.classList.add("hide");
-  restartbtnEl.classList.remove("hide");
-});
-
 //==============================================
 
-function renderResults() {
-  var userAnswer = " ";
-  var numCorrect = 0;
-
-  var userName = userNameEl.value.trim();
-
-
-
-
-  if (name !== " ") {
-    var correctAnswer = JSON.parse(window.localStorage.getItem("")) || [];
-
-  }
-
-
-
-
-
-
-}
 
 let playAgainEl = document.getElementById("restart-btn");
 
 playAgainEl.addEventListener("click", function playAgain() {
   startbtnEl.classList.remove("hide");
+  viewScoreEl.classList.remove("hide");
   screenEl.classList.add("hide");
   restartbtnEl.classList.add("hide");
   // var navigation = navEl.classList.remove("hide");
   // var answerButton = answerBtnEl.classList.remove("hide");
 });
+
+
+
