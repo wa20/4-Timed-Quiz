@@ -271,7 +271,7 @@ function questions() {
 
 //=============================================
 //check question function
-let seconds = 10;
+let seconds = 60;
 let score = 0;
 let incorrect = 0;
 
