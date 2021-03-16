@@ -174,6 +174,53 @@ let question = [
 
     correctAnswer: "Lake Superior",
   },
+
+  {
+    question: "What name was historically used for the Turkish city currently known as Istanbul?",
+    answer: ["Hudavendigar", "Constaninople", "Sogut", "Adrianople"],
+
+    correctAnswer: "Constaninople",
+  },
+
+  {
+    question: "How many legs is it biologically impossible for a centipede to have?",
+    answer: ["26", "50", "75", "100"],
+    correctAnswer: "100",
+  },
+
+  {
+    question: "What is the scientific name of the knee cap?",
+    answer: ["Patella", "Femur", "Foramen Magnum", "Scapula"],
+    correctAnswer: "Patella",
+  },
+
+  {
+    question: "What physics principle relates the net electric flux out of a closed surface to the charge enclosed by that surface?",
+    answer: ["Faraday's Law", "Ampere's Law", "Gauss's Law", "Biot-Savart Law"],
+    correctAnswer: "Gauss's Law",
+  },
+
+  {
+    question: "What is the fastest land animal?",
+    answer: ["Cheetah", "Pronghorn Antelope", "Puma", "Thomson Gazelle"],
+    correctAnswer: "Cheetah",
+  },
+
+  {
+    question: "What is the Italian word for 'tomato'?",
+    answer: ["Agilo", "pomodoro", "Cipolla", "Peperoncino"],
+    correctAnswer: "Agilo",
+  },
+
+  {
+    question: "Botanically speaking, which of these fruits is NOT a berry?",
+    answer: ["Blueberry", "Banana", "Concord Grape", "Strawberry"],
+    correctAnswer: "Strawberry",
+  },
+
+
+  
+
 ];
 
 let currentQsIndex = 0; //shows which question we are displaying
